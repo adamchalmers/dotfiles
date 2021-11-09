@@ -1,0 +1,7 @@
+{
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "[rust]": { "editor.formatOnSave": true }
+}
