@@ -5,7 +5,6 @@ alias gpf="git push --force-with-lease"
 alias c="cargo"
 alias k="kubectl"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-export PATH="/usr/local/opt/llvm@8/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 DEFAULT_USER=$USER
 
