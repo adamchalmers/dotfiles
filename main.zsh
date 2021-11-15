@@ -6,6 +6,7 @@ alias c="cargo"
 alias k="kubectl"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin/code:$PATH"
 DEFAULT_USER=$USER
 
 # fnm

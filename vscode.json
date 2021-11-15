@@ -3,5 +3,12 @@
     "editor.fontFamily": "FiraCode-Retina",
     "editor.minimap.enabled": false,
     "workbench.colorTheme": "Visual Studio Dark",
-    "[rust]": { "editor.formatOnSave": true }
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    "files.exclude": {
+        "target/": true
+    },
+    "redhat.telemetry.enabled": false,
+    "terminal.integrated.tabs.enabled": false
 }
