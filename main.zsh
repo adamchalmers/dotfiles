@@ -6,15 +6,11 @@ alias c="cargo"
 alias cf="cloudflared"
 alias w="wrangler"
 alias k="kubectl"
+alias python="python3"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin/code:$PATH"
+export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S\nmaxmem\t%Mk'
 DEFAULT_USER=$USER
-
-# fnm
-export PATH="/var/folders/4j/r1kf44dx2xgd5ct6snpxpfy00000gn/T/fnm_multishells/46371_1636061730326/bin":$PATH
-export FNM_MULTISHELL_PATH="/var/folders/4j/r1kf44dx2xgd5ct6snpxpfy00000gn/T/fnm_multishells/46371_1636061730326"
-export FNM_DIR="/Users/adamchalmers/.fnm"
-export FNM_LOGLEVEL="info"
-export FNM_NODE_DIST_MIRROR="https://nodejs.org/dist"
-export FNM_ARCH="x64"
+export RIPGREP_CONFIG_PATH="/Users/adamchalmers/.config/ripgrep"
+eval "$(fnm env)"

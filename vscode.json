@@ -2,7 +2,10 @@
     "editor.fontLigatures": true,
     "editor.fontFamily": "FiraCode-Retina",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.rulers": [
+        100
+    ],
+    "explorer.sortOrder": "mixed",
     "[rust]": {
         "editor.formatOnSave": true
     },
@@ -10,5 +13,14 @@
         "target/": true
     },
     "redhat.telemetry.enabled": false,
-    "terminal.integrated.tabs.enabled": false
+    "terminal.integrated.tabs.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "files.associations": {
+        "RELEASE_NOTES": "plaintext"
+    },
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "editor.inlayHints.enabled": "offUnlessPressed",
 }
