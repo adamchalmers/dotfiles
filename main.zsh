@@ -13,4 +13,3 @@ export PATH="/usr/local/bin/code:$PATH"
 export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S\nmaxmem\t%Mk'
 DEFAULT_USER=$USER
 export RIPGREP_CONFIG_PATH="/Users/adamchalmers/.config/ripgrep"
-eval "$(fnm env)"
