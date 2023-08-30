@@ -7,8 +7,8 @@ alignment = "left"
 type = "prompt"
 
   [[blocks.segments]]
-  background = "#1478DB"
-  foreground = "#000000"
+  background = "4" # blue
+  foreground = "0" # black
   trailing_diamond = "\ue0b0"
   style = "diamond"
   template = " {{ .Path }} "
@@ -18,14 +18,14 @@ type = "prompt"
     style = "full"
 
   [[blocks.segments]]
-  background = "#3AD900"
+  background = "2" # green
   background_templates = [
-  "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFC600{{ end }}",
-  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
-  "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-  "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+  "{{ if or (.Working.Changed) (.Staging.Changed) }}3{{ end }}",
+  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}3{{ end }}",
+  "{{ if gt .Ahead 0 }}5{{ end }}",
+  "{{ if gt .Behind 0 }}5{{ end }}"
 ]
-  foreground = "#000000"
+  foreground = "0" # black
   leading_diamond = "<transparent,background></>"
   trailing_diamond = "\ue0b0"
   style = "diamond"
@@ -41,8 +41,8 @@ alignment = "right"
 type = "prompt"
 
   [[blocks.segments]]
-  background = "#1478DB"
-  foreground = "#000000"
+  background = "4"
+  foreground = "0" # black
   leading_diamond = " \ue0b2"
   style = "diamond"
   template = " {{ .FormattedMs }} "
