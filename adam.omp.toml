@@ -21,9 +21,7 @@ type = "prompt"
   style = "diamond"
   background = "7"
   foreground = "0"
-  background_templates = [
-  "{{ if .SSHSession }}3{{ end }}"
-]
+  background_templates = ["{{ if .SSHSession }}3{{ end }}"]
   trailing_diamond = ""
   template = "{{ .UserName }}@{{ .HostName }}"
 
@@ -36,7 +34,7 @@ type = "prompt"
   type = "path"
 
     [blocks.segments.properties]
-    style = "full"
+    style = "agnoster_short"
 
   [[blocks.segments]]
   background = "2" # green
