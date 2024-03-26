@@ -1,0 +1,102 @@
+[credential "https://github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+[user]
+    name = Adam Chalmers
+    email = adam.s.chalmers@gmail.com
+	signingkey = 7DDA53FC76A30B04
+
+[includeIf "gitdir:~/kc-repos/"]
+    path = ~/kc-repos/.gitconfig
+
+[init]
+    defaultBranch = main
+
+[branch]
+    # Sort by date last committed, not by name.
+    sort = -committerdate
+
+[push]
+    # If there's no branch on the remote with a matching name, creates one and uses it.
+    autoSetupRemote = true
+
+[merge]
+    # Get a 3-way merge which shows the original, the current, and the incoming.
+    conflictStyle = zdiff3
+
+[rebase]
+    # 'git stash' before rebase, then 'git stash pop' after it.
+    autostash = true
+
+[status]
+    # Show which commits were changed in a submodule.
+    submoduleSummary = true
+
+[alias]
+    aa = add --all
+    s = status
+    sw = switch
+    c = commit
+    cm = commit -m 
+    d = diff
+    rb = rebase
+    pl = pull
+    ca = commit --amend
+    pf = push --force-with-lease
+    oops = commit --amend --no-edit 
+    oopsiedaisy = !git oops && git pf
+    rd = restore .
+    su = submodule update --init --recursive
+    fo = fetch origin
+    com = checkout main
+	diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+    # 'git shw' will do 'git show' but with difftool.
+    shw = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
+
+
+[filter "lfs"]
+    # Don't know what any of these do
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+# Sign commits
+[gpg]
+	program = /opt/homebrew/bin//gpg
+[commit]
+	gpgsign = true
+
+[core]
+    # Also used for visual image diffs
+	attributesfile = ~/.gitattributes
+
+[diff]
+    # Show which commits were changed in a submodule.
+    submodule = log
+    tool = difftastic
+    external = difft
+
+[diff "image"]
+    # Produce visual diffs for images
+	command = ~/programming/git-diff-image/git_diff_image
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+    
+[rerere]
+    # "reuse recovered resolution"
+    # Remembers how you resolved merge conflicts during a git rebase and
+    # automatically resolves conflicts for you when it can.
+    enabled = true
