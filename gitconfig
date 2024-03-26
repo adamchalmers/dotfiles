@@ -1,7 +1,9 @@
+# GitHub boilerplate
 [credential "https://github.com"]
     helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
 
+# GitHub boilerplate
 [credential "https://gist.github.com"]
     helper = 
     helper = !/opt/homebrew/bin/gh auth git-credential
@@ -11,9 +13,12 @@
     email = adam.s.chalmers@gmail.com
 	signingkey = 7DDA53FC76A30B04
 
+# All work repos are in the `~/kc-repos` directory.
+# If it's a work repo, use work settings (e.g. use my work email when committing)
 [includeIf "gitdir:~/kc-repos/"]
     path = ~/kc-repos/.gitconfig
 
+# New repos use 'main' instead of 'master'
 [init]
     defaultBranch = main
 
@@ -58,7 +63,6 @@
     # 'git shw' will do 'git show' but with difftool.
     shw = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
 
-
 [filter "lfs"]
     # Don't know what any of these do
 	smudge = git-lfs smudge -- %f
@@ -79,6 +83,7 @@
 [diff]
     # Show which commits were changed in a submodule.
     submodule = log
+    # Use difftastic for nicer diffs.
     tool = difftastic
     external = difft
 
@@ -86,17 +91,35 @@
     # Produce visual diffs for images
 	command = ~/programming/git-diff-image/git_diff_image
 
+# Boilerplate for setting up difftastic by default.
 [difftool]
     prompt = false
 
+# Boilerplate for setting up difftastic by default.
 [difftool "difftastic"]
     cmd = difft "$LOCAL" "$REMOTE"
 
+# Boilerplate for setting up difftastic by default.
 [pager]
     difftool = true
     
+# "reuse recovered resolution"
+# Remembers how you resolved merge conflicts during a git rebase and
+# automatically resolves conflicts for you when it can.
 [rerere]
-    # "reuse recovered resolution"
-    # Remembers how you resolved merge conflicts during a git rebase and
-    # automatically resolves conflicts for you when it can.
     enabled = true
+
+# Set up aliases, so I can do 
+# `git clone gh:/rust-lang/rust` instead of 
+# `git clone https://github.com/rust-lang/rust`.
+[url "https://github.com/"]
+    insteadOf = git://github.com/
+    insteadOf = git@github.com:
+    insteadOf = gh:
+    insteadOf = github:
+# Alias personal repos, so I can do `git clone ghac:/blog`
+[url "https://github.com/adamchalmers"]
+    insteadOf = ghac:
+# Alias work repos, so I can do `git clone ghkc:/modeling-api`
+[url "https://github.com/KittyCAD"]
+    insteadOf = ghkc:
