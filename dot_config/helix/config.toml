@@ -1,0 +1,25 @@
+theme = "vscode_adamch"
+
+[editor]
+auto-format = true
+line-number = "relative"
+scrolloff = 5
+shell = ["zsh", "-c"]
+bufferline = "multiple"
+popup-border = "all"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+mode.normal = "Normal"
+mode.insert = "Insert"
+mode.select = "Select"
+
+[keys.normal]
+X = "select_line_above"
+x = "select_line_below"
+
+[keys.normal.space]
+w = ":write"
+i = ":toggle lsp.display-inlay-hints"

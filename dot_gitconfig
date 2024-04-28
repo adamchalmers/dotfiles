@@ -1,0 +1,133 @@
+# GitHub boilerplate
+[credential "https://github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+# GitHub boilerplate
+[credential "https://gist.github.com"]
+    helper = 
+    helper = !/opt/homebrew/bin/gh auth git-credential
+
+[user]
+    name = Adam Chalmers
+    email = adam.s.chalmers@gmail.com
+	signingkey = 7DDA53FC76A30B04
+
+# All work repos are in the `~/kc-repos` directory.
+# If it's a work repo, use work settings (e.g. use my work email when committing)
+[includeIf "gitdir:~/kc-repos/"]
+    path = ~/kc-repos/.gitconfig
+
+# New repos use 'main' instead of 'master'
+[init]
+    defaultBranch = main
+
+[branch]
+    # Sort by date last committed, not by name.
+    sort = -committerdate
+
+[push]
+    # If there's no branch on the remote with a matching name, creates one and uses it.
+    autoSetupRemote = true
+
+[merge]
+    # Get a 3-way merge which shows the original, the current, and the incoming.
+    conflictStyle = zdiff3
+
+[rebase]
+    # 'git stash' before rebase, then 'git stash pop' after it.
+    autostash = true
+
+[status]
+    # Show which commits were changed in a submodule.
+    submoduleSummary = true
+
+[alias]
+    aa = add --all
+    s = status
+    sw = switch
+    c = commit
+    cm = commit -m 
+    d = diff
+    rb = rebase
+    pl = pull
+    ca = commit --amend
+    pf = push --force-with-lease
+    oops = commit --amend --no-edit 
+    oopsiedaisy = !git oops && git pf
+    rd = restore .
+    su = submodule update --init --recursive
+    fo = fetch origin
+    com = checkout main
+	diff-image = "!f() { cd -- \"${GIT_PREFIX:-.}\"; GIT_DIFF_IMAGE_ENABLED=1 git diff \"$@\"; }; f"
+    # 'git shw' will do 'git show' but with difftool.
+    shw = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
+    fomo = "!git fetch origin main && git rebase origin/main"
+    pec = "!git commit --allow-empty -m void && git push"
+
+[filter "lfs"]
+    # Don't know what any of these do
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+[gpg]
+    # Sign commits
+	program = /opt/homebrew/bin//gpg
+
+[commit]
+    # Sign commits
+	gpgsign = true
+    # Show a diff below the commit-message draft.
+    verbose = true
+
+[core]
+    # Also used for visual image diffs
+	attributesfile = ~/.gitattributes
+    # Use helix as the editor when writing commits.
+    editor = hx
+
+[diff]
+    # Show which commits were changed in a submodule.
+    submodule = log
+    # Use difftastic for nicer diffs.
+    tool = difftastic
+    external = difft
+
+[diff "image"]
+    # Produce visual diffs for images
+	command = ~/programming/git-diff-image/git_diff_image
+
+# Boilerplate for setting up difftastic by default.
+[difftool]
+    prompt = false
+
+# Boilerplate for setting up difftastic by default.
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+# Boilerplate for setting up difftastic by default.
+[pager]
+    difftool = true
+    
+# "reuse recovered resolution"
+# Remembers how you resolved merge conflicts during a git rebase and
+# automatically resolves conflicts for you when it can.
+[rerere]
+    enabled = true
+
+# Set up aliases, so I can do 
+# `git clone gh:/rust-lang/rust` instead of 
+# `git clone https://github.com/rust-lang/rust`.
+[url "https://github.com/"]
+    insteadOf = git://github.com/
+    insteadOf = git@github.com:
+    insteadOf = gh:
+    insteadOf = github:
+# Alias personal repos, so I can do `git clone ghac:/blog`
+[url "https://github.com/adamchalmers"]
+    insteadOf = ghac:
+# Alias work repos, so I can do `git clone ghkc:/modeling-api`
+[url "https://github.com/KittyCAD"]
+    insteadOf = ghkc:

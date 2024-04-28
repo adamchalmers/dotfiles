@@ -1,0 +1,86 @@
+{
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code',FiraCode",
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        100
+    ],
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.lineNumbers": "relative",
+    "editor.stickyScroll.enabled": true,
+    "editor.inlineSuggest.enabled": true,
+    "explorer.sortOrder": "mixed",
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    "files.exclude": {
+        "target/": true
+    },
+    "files.associations": {
+        "RELEASE_NOTES": "plaintext"
+    },
+    "terminal.integrated.fontSize": 12,
+
+    "go.toolsManagement.autoUpdate": true,
+    "explorer.confirmDragAndDrop": false,
+    "errorLens.enabledDiagnosticLevels": [
+        "error"
+    ],
+    "errorLens.onSave": true,
+    "gitlens.codeLens.recentChange.command": "gitlens.openCommitOnRemote",
+    "gitlens.autolinks": [
+        {
+            "prefix": "DLP-",
+            "url": "https://jira.cfops.it/browse/DLP-<num>"
+        }
+    ],
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.panel.defaultLocation": "right",
+    "workbench.startupEditor": "none",
+    "settingsSync.ignoredExtensions": [
+        "vscodevim.vim"
+    ],
+    "haskell.manageHLS": "PATH",
+    "lldb.suppressUpdateNotifications": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false
+    },
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Default Light+",
+    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "gitlens.hovers.currentLine.details": false,
+    "gitlens.hovers.currentLine.changes": false,
+    "explorer.confirmDelete": false,
+    "rust-analyzer.cargo.buildScripts.enable": true,
+    "rust-analyzer.cargo.features": [],
+    "rust-analyzer.check.extraArgs": ["--target-dir", "target/rust-analyzer-check"],
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "vim.smartRelativeLine": true,
+    "coverage-gutters.coverageFileNames": [
+        "lcov.info",
+        "cov.xml",
+        "coverage.xml",
+        "jacoco.xml",
+        "coverage.cobertura.xml"
+    ],
+    "coverage-gutters.coverageReportFileName": "lcov.info",
+    "git.openRepositoryInParentFolders": "always",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "terminal.integrated.tabs.enabled": false,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
