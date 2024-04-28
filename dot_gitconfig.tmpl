@@ -1,12 +1,12 @@
 # GitHub boilerplate
 [credential "https://github.com"]
     helper = 
-    helper = !/opt/homebrew/bin/gh auth git-credential
+    helper = !{{ .pkgs }}/gh auth git-credential
 
 # GitHub boilerplate
 [credential "https://gist.github.com"]
     helper = 
-    helper = !/opt/homebrew/bin/gh auth git-credential
+    helper = !{{ .pkgs }}/gh auth git-credential
 
 [user]
     name = Adam Chalmers
@@ -74,7 +74,7 @@
 
 [gpg]
     # Sign commits
-	program = /opt/homebrew/bin//gpg
+	program = {{ .pkgs }}//gpg
 
 [commit]
     # Sign commits
