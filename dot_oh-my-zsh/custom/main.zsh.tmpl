@@ -14,6 +14,15 @@ alias clippyall="c clippy --tests --benches --workspace --examples -- -D warning
 export EDITOR="hx"
 export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S\nmaxmem\t%Mk'
 
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 {{ if eq .chezmoi.os "darwin" -}}
 
 alias toggled="open /Users/adamchalmers/Documents/toggled.app"
