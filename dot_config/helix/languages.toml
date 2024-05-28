@@ -2,3 +2,21 @@
 name = "rust"
 auto-format = true
 
+[[language]]
+name = "kcl"
+scope = "source.kcl"
+injection-regex = "kcl"
+file-types = ["kcl"]
+comment-tokens = "//"
+indent = { tab-width = 2, unit = "  " }
+# formatter = { command = "mylang-formatter" , args = ["--stdin"] }
+language-servers = [ "kcl-lsp" ]
+block-comment-tokens = { start = "/*", end = "*/"}
+
+[language-server.kcl-lsp]
+command = "~/kc-repos/kcl-lsp/target/release/kcl-language-server"
+args = ["server", "--stdio"]
+
+[[grammar]]
+name = "kcl"
+source = { git = "https://github.com/KittyCAD/tree-sitter-kcl", rev = "v0.0.2" }
