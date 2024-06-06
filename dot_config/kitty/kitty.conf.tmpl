@@ -3,13 +3,26 @@
 map f1 new_window_with_cwd
 map f2 launch --cwd=current {{ .pkgs }}//hx .
 
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed one above the other
+map f5 launch --location=hsplit
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed side by side
+map f6 launch --location=vsplit
+
+# Create a new window splitting the space used by the existing one so that
+# the two windows are placed side by side if the existing window is wide or
+# one above the other if the existing window is tall.
+map f4 launch --location=split
+
 #: Fonts 
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family     FiraCode Nerd Font Mono
+font_family     JetBrains Mono
 # font_family      MesloLGS NF
 # bold_font        auto
 # italic_font      auto
@@ -28,7 +41,7 @@ font_family     FiraCode Nerd Font Mono
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 14.0
+font_size 14
 
 #: Font size (in pts)
 
@@ -693,7 +706,8 @@ cursor #ff00ff
 #: suffix of "c" on the width/height values to have them interpreted
 #: as number of cells instead of pixels.
 
-enabled_layouts Tall, *
+# Three columns: Two full-size (33% of screen each), and one that splits vertically.
+enabled_layouts tall:bias=66;full_size=2;mirrored=true,splits
 
 #: The enabled window layouts. A comma separated list of layout names.
 #: The special value all means all layouts. The first listed layout
@@ -989,7 +1003,7 @@ tab_powerline_style slanted
 
 # active_tab_foreground   #000
 # active_tab_background   #eee
-# active_tab_font_style   bold-italic
+active_tab_font_style   bold
 # inactive_tab_foreground #444
 # inactive_tab_background #999
 # inactive_tab_font_style normal
