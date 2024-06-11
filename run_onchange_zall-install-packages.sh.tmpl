@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cargo install {{ range .packages.all.cargo}}{{ . }} {{ end -}}

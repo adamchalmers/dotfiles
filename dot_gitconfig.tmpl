@@ -1,17 +1,14 @@
 # GitHub boilerplate
 [credential "https://github.com"]
-    helper = 
-    helper = !{{ .pkgs }}/gh auth git-credential
+    helper = !gh auth git-credential
 
 # GitHub boilerplate
 [credential "https://gist.github.com"]
-    helper = 
-    helper = !{{ .pkgs }}/gh auth git-credential
+    helper = !gh auth git-credential
 
 [user]
     name = Adam Chalmers
     email = adam.s.chalmers@gmail.com
-	signingkey = 7DDA53FC76A30B04
 
 # All work repos are in the `~/kc-repos` directory.
 # If it's a work repo, use work settings (e.g. use my work email when committing)
@@ -72,13 +69,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 
-[gpg]
-    # Sign commits
-	program = {{ .pkgs }}//gpg
-
 [commit]
-    # Sign commits
-	gpgsign = true
     # Show a diff below the commit-message draft.
     verbose = true
 
