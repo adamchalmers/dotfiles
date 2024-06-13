@@ -41,6 +41,7 @@ packages:
     - 'cmake'
     - 'cloudflared'
     - 'chezmoi'
+    - 'jq'
     - 'just'
     - 'gh'
     - 'pkg-config'
