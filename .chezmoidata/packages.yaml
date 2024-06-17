@@ -47,3 +47,4 @@ packages:
     - 'pkg-config'
     - 'difftastic'
     - 'libpq'
+    - 'tldr'
