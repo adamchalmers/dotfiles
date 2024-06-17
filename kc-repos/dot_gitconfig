@@ -1,3 +1,6 @@
 [user]
     email = adam.chalmers@zoo.dev
+    signingkey = 2BCFC0D53B9045AD
 
+[commit]
+    gpgsign = true
