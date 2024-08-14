@@ -9,6 +9,7 @@ alias icat="kitty +kitten icat"
 alias python="python3"
 alias vim="nvim"
 alias clippyall="c clippy --tests --benches --workspace --examples -- -D warnings"
+alias pinentry='pinentry-mac'
 
 
 export EDITOR="hx"
@@ -36,6 +37,7 @@ DEFAULT_USER=$USER
 export MYSQLCLIENT_LIB_DIR=/opt/homebrew/Cellar/mysql-client/8.2.0/lib
 export VAULT_ADDR="http://vault.hawk-dinosaur.ts.net"
 export XDG_CONFIG_HOME="/Users/adamchalmers/.config"
+export GPG_TTY=$(tty)
 
 {{ else if eq .chezmoi.os "linux" -}}
 
