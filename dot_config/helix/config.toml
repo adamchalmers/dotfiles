@@ -8,6 +8,7 @@ shell = ["zsh", "-c"]
 bufferline = "multiple"
 popup-border = "all"
 cursorline = true
+completion-timeout = 10
 
 [editor.file-picker]
 hidden = false
