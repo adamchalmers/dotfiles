@@ -25,3 +25,4 @@ x = "select_line_below"
 [keys.normal.space]
 w = ":write"
 i = ":toggle lsp.display-inlay-hints"
+t = ":toggle soft-wrap.enable"
