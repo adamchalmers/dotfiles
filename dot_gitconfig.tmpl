@@ -61,6 +61,7 @@
     shw = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
     fomo = "!git fetch origin main && git rebase origin/main"
     pec = "!git commit --allow-empty -m void && git push"
+    bd = branch -D
 
 [filter "lfs"]
     # Don't know what any of these do

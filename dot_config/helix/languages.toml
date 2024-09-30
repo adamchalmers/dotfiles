@@ -3,6 +3,10 @@ name = "rust"
 auto-format = true
 
 [[language]]
+name = "elixir"
+auto-format = true
+
+[[language]]
 name = "kcl"
 scope = "source.kcl"
 injection-regex = "kcl"
