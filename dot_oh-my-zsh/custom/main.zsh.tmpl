@@ -12,10 +12,13 @@ alias python="python3"
 alias vim="nvim"
 alias clippyall="c clippy --tests --benches --workspace --examples -- -D warnings"
 alias pinentry='pinentry-mac'
+alias y="yarn"
+alias hx="$HOME/programming/helix/target/release/hx"
 
 
 export EDITOR="hx"
-export HELIX_LOGS="~/.cache/helix/helix.log"
+export HELIX_LOGS="$HOME/.cache/helix/helix.log"
+export HELIX_RUNTIME="$HOME/programming/helix/runtime"
 export TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S\nmaxmem\t%Mk'
 
 function yy() {
