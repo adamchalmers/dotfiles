@@ -28,4 +28,4 @@ i = ":toggle lsp.display-inlay-hints"
 t = ":toggle soft-wrap.enable"
 # When used inside `Some(expr)` or `Ok(expr)`, replaces it with `expr`
 # Very useful for writing Rust.
-x = "@mi(d<A-o><A-o>R" 
+# x = "@mi(d<A-o><A-o>R" 
