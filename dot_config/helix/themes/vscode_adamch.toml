@@ -1,5 +1,5 @@
 inherits = "dark_plus"
-"ui.background" = { fg = "foreground" }
-"ui.bufferline.background" = { fg = "foreground" }
-"ui.popup" = { fg = "foreground" }
-"ui.popup.info" = { fg = "foreground" }
+"ui.background" = { fg = "default" }
+"ui.bufferline.background" = { fg = "default" }
+"ui.popup" = { fg = "default" }
+"ui.popup.info" = { fg = "default" }
