@@ -1,5 +1,5 @@
+theme = chalm
+
 keybind = global:cmd+.=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
-
-
-theme = chalm
+split-divider-color = 3465a4
