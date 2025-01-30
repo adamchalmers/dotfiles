@@ -29,6 +29,10 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
+function otorilink() {
+        ssh -L "$(echo $1):localhost:$(echo $1)" 192.168.0.31
+}
+
 {{ if eq .chezmoi.os "darwin" -}}
 
 alias toggled="open /Users/adamchalmers/Documents/toggled.app"
