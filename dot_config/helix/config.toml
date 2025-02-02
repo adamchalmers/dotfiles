@@ -21,12 +21,13 @@ mode.select = "Select"
 [keys.normal]
 X = "select_line_above"
 x = "select_line_below"
+ret = "goto_word"
+Y = ":clipboard-yank"
 
 [keys.normal.space]
 w = ":write"
 i = ":toggle lsp.display-inlay-hints"
 t = ":toggle soft-wrap.enable"
-ret = "goto_word"
 # When used inside `Some(expr)` or `Ok(expr)`, replaces it with `expr`
 # Very useful for writing Rust.
-x = "@mi(d<A-o><A-o>R" 
+x = "@mi(d<A-o><A-o>R"
