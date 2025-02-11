@@ -24,6 +24,9 @@ x = "select_line_below"
 ret = "goto_word"
 Y = ":clipboard-yank"
 
+[keys.select]
+Y = ":clipboard-yank"
+
 [keys.normal.space]
 w = ":write"
 i = ":toggle lsp.display-inlay-hints"
