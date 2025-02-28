@@ -34,3 +34,8 @@ t = ":toggle soft-wrap.enable"
 # When used inside `Some(expr)` or `Ok(expr)`, replaces it with `expr`
 # Very useful for writing Rust.
 x = "@mi(d<A-o><A-o>R"
+# Show blame info for current line
+B = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})"
+# Copy git provider url for this file and line
+# o = ":sh get_git_url %{buffer_name} %{cursor_line} | pbcopy"
+
