@@ -36,13 +36,14 @@ function otorilink() {
 {{ if eq .chezmoi.os "darwin" -}}
 
 alias toggled="open /Users/adamchalmers/Documents/toggled.app"
-alias wlib="cd /Users/adamchalmers/kc-repos/modeling-app/src/wasm-lib"
+alias wlib="cd /Users/adamchalmers/kc-repos/modeling-app/rust"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/bin/code:$PATH"
 export PATH="/opt/homebrew/bin/:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/Users/adamchalmers/.local/bin:$PATH"
+export PATH="/Users/adamchalmers/programming/git-url-finder/target/release:$PATH"
 DEFAULT_USER=$USER
 export VAULT_ADDR="http://vault.hawk-dinosaur.ts.net"
 export XDG_CONFIG_HOME="/Users/adamchalmers/.config"
