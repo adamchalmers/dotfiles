@@ -23,4 +23,4 @@ args = ["server", "--stdio"]
 
 [[grammar]]
 name = "kcl"
-source = { git = "https://github.com/KittyCAD/tree-sitter-kcl", rev = "9bc256cc4b5d567edc82b63f6d31bf00b07e0944" }
+source = { git = "https://github.com/KittyCAD/tree-sitter-kcl", rev = "c5323c49f258bf4d602f97211a58ba566dec3498" }
