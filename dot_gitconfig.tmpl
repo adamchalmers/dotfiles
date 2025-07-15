@@ -85,26 +85,12 @@
 [diff]
     # Show which commits were changed in a submodule.
     submodule = log
-    # Use difftastic for nicer diffs.
-    tool = difftastic
-    external = difft
+    colorMoved = default
 
 [diff "image"]
     # Produce visual diffs for images
 	command = ~/programming/git-diff-image/git_diff_image
 
-# Boilerplate for setting up difftastic by default.
-[difftool]
-    prompt = false
-
-# Boilerplate for setting up difftastic by default.
-[difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
-
-# Boilerplate for setting up difftastic by default.
-[pager]
-    difftool = true
-    
 # "reuse recovered resolution"
 # Remembers how you resolved merge conflicts during a git rebase and
 # automatically resolves conflicts for you when it can.
@@ -125,3 +111,21 @@
 # Alias work repos, so I can do `git clone ghkc:/modeling-api`
 [url "https://github.com/KittyCAD"]
     insteadOf = ghkc:
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    line-numbers = true
+    hyperlinks = true
+    syntax-theme = "Visual Studio Dark+"
+    
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+    
