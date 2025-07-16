@@ -18,7 +18,7 @@ language-servers = [ "kcl-lsp" ]
 block-comment-tokens = { start = "/*", end = "*/"}
 
 [language-server.kcl-lsp]
-command = "~/kc-repos/kcl-lsp/target/release/kcl-language-server"
+command = "/Users/adamchalmers/kc-repos/modeling-app/rust/target/release/kcl-language-server"
 args = ["server", "--stdio"]
 
 [[grammar]]

@@ -33,7 +33,7 @@ function yy() {
 }
 
 function otorilink() {
-        ssh -L "$(echo $1):localhost:$(echo $1)" 192.168.0.31
+        ssh -L "$(echo $1):localhost:$(echo $1)" 192.168.1.149
 }
 
 {{ if eq .chezmoi.os "darwin" -}}
