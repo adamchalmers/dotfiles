@@ -17,6 +17,12 @@ hidden = false
 mode.normal = "Normal"
 mode.insert = "Insert"
 mode.select = "Select"
+left = ["mode", "spinner", "file-name", "version-control", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "workspace-diagnostics", "selections", "register", "position", "file-encoding"]
+
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [keys.normal]
 X = "select_line_above"
@@ -38,4 +44,5 @@ x = "@mi(d<A-o><A-o>R"
 B = ":sh git -C $(dirname $(realpath %{buffer_name})) blame -L %{cursor_line},%{cursor_line} $(realpath %{buffer_name})"
 # Copy git provider url for this file and line
 o = ":sh git-url-finder %{buffer_name} %{cursor_line} | pbcopy"
+R = ":reset-diff-change"
 

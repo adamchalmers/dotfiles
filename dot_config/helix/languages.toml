@@ -7,6 +7,10 @@ name = "elixir"
 auto-format = true
 
 [[language]]
+name = "python"
+auto-format = true
+
+[[language]]
 name = "kcl"
 scope = "source.kcl"
 injection-regex = "kcl"
