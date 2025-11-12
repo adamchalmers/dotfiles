@@ -1,4 +1,4 @@
-theme = chalm
+theme = dark:chalm, light:Adwaita
 
 keybind = global:cmd+.=toggle_quick_terminal
 quick-terminal-animation-duration = 0.1
